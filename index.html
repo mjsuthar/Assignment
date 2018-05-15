@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Assignment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -59,23 +59,29 @@
 	
 	<div style="text-align:center;" class="about">
 		<h4>Do not hesitate to  contact me!</h4>
-		<form>
-			<label>Name</label><br>
-			<input type="text" class="form-control" id="name" name="name">
-			<label>Email</label><br>
-			<input type="text" class="form-control" id="email" name="name">
-			<label>Phone No.</label><br>
-			<input type="text" class="form-control" id="number" name="name" placeholder="Ex: (555) 555-5555">
-			<label>Web address</label><br>
-			<input type="text" class="form-control" id="web" name="name">
-			<label>Date of Birth</label><br>
-			<input type="date" class="form-control" id="dob" name="name"><br>
-			<button class="send" type="button" onclick="Submit()">Send</button>
-		</form>
-		<br><br><label>Name:<span id="resultName"></span></label><br>
+		<div id='fillDetails' style="display:block; text-align:center;">
+			<form>
+				<label>Name</label><br>
+				<input type="text" class="form-control" id="name" name="name">
+				<label>Email</label><br>
+				<input type="text" class="form-control" id="email" name="email">
+				<label>Phone No.</label><br>
+				<input type="text" class="form-control" id="number" name="phone" placeholder="Ex: (555) 555-5555">
+				<label>Web address</label><br>
+				<input type="text" class="form-control" id="web" name="web">
+				<label>Date of Birth</label><br>
+				<input type="date" class="form-control" id="dob" name="date"><br>
+				<button class="send" type="button" onclick="Submit()">Send</button>
+			</form>
+		</div>
+		<div id="outputs" style="display:none; font-family: Arial;">
+			<br><label>Name:<span id="resultName"></span></label><br>
 			<br><label>Email:<span id="resultEmail"></span></label><br>
 			<br><label>Phone No:<span id="resultPhone"></span></label><br>
 			<br><label>Web Address:<span id="resultWeb"></span></label><br>
+			<br><label>Date of Birth:<span id="resultDOB"></span></label><br>
+			<br><span style="color:red">Please reload page if you want again fill the form</span>
+		</div>
 	</div>
   </div>
 </div>
