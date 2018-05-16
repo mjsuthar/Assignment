@@ -1,24 +1,26 @@
 <!DOCTYPE>
-<html lang="en">
+<html lang="en" ng-app="gemStore">
 <head>
   <title>Assignment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/javascript.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="js/javascript.js"></script>
+     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body ng-controller="StoreController as store">
 
-<div class="container">
+<div  ng-controller="Practice as tab" >
 	<div class="tab">
-	  <button class="tablinks firstBTN active" onclick="openPage(event, 'myCarousel')">MY ART</button>
-	  <button class="tablinks " onclick="openPage(event, 'about')">About</button>
+	  <button class="firstBTN" ng-class="{active:tab.isSet(1)}" ng-click="tab.setTab(1)">MY ART</button>
+	  <button ng-class="{active:tab.isSet(2)}" ng-click="tab.setTab(2)">About</button>
 	</div>
 	
-  <div id="myCarousel" class="carousel slide tabcontent" style="display: block;" data-ride="carousel">
+  <div ng-show="tab.isSet(1)" id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class=""></li>
@@ -52,7 +54,7 @@
     </a>
   </div>
   
-  <div class="tabcontent" id="about" style="display: hidden;">
+  <div ng-show="tab.isSet(2)" id="about" >
 	<h1>About</h1>
 	<p> This is Assignment given by COVIAM. In this assignment i used bootstrap.min.css file and also use bootstrap.min.js,
 		jquery.min.js online urls. here we assign Name, Email, phone no., Website Address and Date of Birth.</p>
@@ -80,26 +82,10 @@
 			<br><label>Phone No:<span id="resultPhone"></span></label><br>
 			<br><label>Web Address:<span id="resultWeb"></span></label><br>
 			<br><label>Date of Birth:<span id="resultDOB"></span></label><br>
-			<br><span style="color:red">Please reload page if you want again fill the form</span>
+			<br><span style="color:red">Note:-Please reload page if you want again fill the form</span>
 		</div>
 	</div>
   </div>
 </div>
-
-<script>
-	function openPage(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
-
+</body>
 </html>
